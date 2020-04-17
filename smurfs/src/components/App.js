@@ -25,6 +25,7 @@ const App = props => {
     props.fetchSmurf();
   }, [])
 
+  console.log('outside ',props.smurf)
   return (
     <form onSubmit={formSubmit}>
       <label htmlFor='name'>Name
