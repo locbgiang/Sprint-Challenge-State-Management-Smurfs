@@ -10,8 +10,11 @@ export const fetchSmurf = () => {
 };
 
 export const postSmurf = (newSmurf) => {
-    return () => {
+    return dispatch => {
         console.log('inside action', newSmurf)
         axios.post('http://localhost:3333/smurfs', newSmurf)
+        .then(res=>{
+            dispatch({type: 'REFRESH_SMURF', payload: res.data})
+        });
     }
 }

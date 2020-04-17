@@ -1,5 +1,5 @@
 const initialState = {
-    smurf : [{
+    smurf: [{
         name: 'loc',
         age: '',
         height: '',
@@ -9,9 +9,14 @@ const initialState = {
 
 
 export const smurfReducer = (state = initialState, action) => {
-    switch(action.type){
+    switch (action.type) {
         case 'FETCH_SMURF':
-            return{
+            return {
+                ...state,
+                smurf: action.payload
+            }
+        case 'REFRESH_SMURF':
+            return {
                 ...state,
                 smurf: action.payload
             }
